@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI | L'Élite de l'Automatisation en Algérie</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #102a43; 
+            --accent: #24b4b0;  
+            --bg: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background: var(--bg); color: var(--primary); scroll-behavior: smooth; }
+
+        /* --- Payment Banner --- */
+        .payment-banner { background: #e12d39; color: white; padding: 15px; text-align: center; font-weight: bold; }
+
+        /* --- Header --- */
+        header {
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .logo-img { height: 60px; width: auto; }
+
+        /* --- Hero --- */
+        .hero {
+            padding: 180px 8% 80px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e2f0ef 100%); 
+            min-height: 90vh;
+            gap: 50px;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .hero-text { flex: 1.2; z-index: 2; }
+        .hero-text h1 { font-size: 4rem; line-height: 1; font-weight: 800; margin-bottom: 25px; letter-spacing: -2px; }
+        .hero-text h1 span { color: var(--accent); }
+        .hero-text p { font-size: 1.3rem; color: #486581; margin-bottom: 40px; }
+
+        .hero-visual { flex: 0.8; position: relative; z-index: 2; }
+        .main-mockup {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 40px 80px rgba(16, 42, 67, 0.15);
+            transform: perspective(1000px) rotateY(-10deg) scale(1.05); 
+            transition: transform 0.3s ease;
+        }
+        .main-mockup:hover { transform: perspective(1000px) rotateY(0deg) scale(1.08); }
+
+        /* --- German Tech Section --- */
+        .german-trust {
+            padding: 60px 8% 30px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+        .trust-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .trust-content { flex: 2; }
+        .trust-flag { flex: 1; text-align: center; }
+        .flag-box {
+            width: 100px;
+            height: 60px;
+            display: inline-block;
+            background: linear-gradient(to bottom, #000 33.3%, #FF0000 33.3%, #FF0000 66.6%, #FFCC00 66.6%);
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .trust-container h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        .trust-container p { opacity: 0.8; font-size: 1.1rem; line-height: 1.6; }
+
+        /* --- SECCIÓN DE ESTADÍSTICAS --- */
+        .stats-bar {
+            padding: 40px 8% 60px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); font-weight: 800; }
+        .stat-item p { color: #486581; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .hero-bg-img {
+            position: absolute;
+            opacity: 0.1;
+            filter: grayscale(100%);
+            z-index: 1;
+        }
+        .hero-bg-1 { top: 10%; left: -5%; width: 200px; animation: float 6s ease-in-out infinite; }
+        .hero-bg-2 { bottom: 5%; right: 0%; width: 250px; animation: float 8s ease-in-out infinite reverse; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* --- Features Section --- */
+        .features { padding: 100px 8%; background: #fff; text-align: center; }
+        .features h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .features p.subtitle { font-size: 1.1rem; color: #627d98; max-width: 800px; margin: 0 auto 60px; }
+
+        .feat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px;
+        }
+        .feat-card {
+            background: var(--bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feat-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .feat-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px; } 
+        .feat-card h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--primary); }
+        .feat-card p { color: #486581; }
+
+        /* --- Dashboard Preview --- */
+        .dashboard-preview {
+            padding: 100px 8%;
+            background: linear-gradient(135deg, #f0f4f8 0%, #eef3f6 100%);
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .dashboard-text { flex: 1; z-index: 2; }
+        .dashboard-img { flex: 1.5; position: relative; z-index: 2; }
+        .dashboard-img img { width: 100%; border-radius: 25px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #cfd9e6; }
+
+        /* --- Testimonial Section --- */
+        .testimonial {
+            background: var(--primary);
+            color: white;
+            padding: 100px 8%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial img.quote-bg {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            opacity: 0.1;
+        }
+        .testimonial blockquote {
+            font-size: 2.2rem;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.4;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        .testimonial cite {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Call to Action Final --- */
+        .cta-final {
+            padding: 80px 8%;
+            text-align: center;
+            background: #fff;
+        }
+        .cta-final h2 { font-size: 3rem; margin-bottom: 30px; }
+
+        /* --- Buttons --- */
+        .btn-p { background: var(--accent); color: white; padding: 18px 40px; border-radius: 15px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-p:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(36, 180, 175, 0.4); }
+
+        /* --- Pricing --- */
+        .pricing-v3 { padding: 100px 8%; background: var(--primary); color: white; text-align: center; border-radius: 60px 60px 0 0; }
+        .p-grid-v3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        .p-card { background: rgba(255,255,255,0.05); padding: 50px 30px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+        .p-card.gold { border: 2px solid var(--accent); background: rgba(36, 180, 176, 0.08); }
+
+        .price-val { font-size: 3.5rem; font-weight: 800; margin: 20px 0; }
+        .price-val span { font-size: 1rem; opacity: 0.5; }
+
+        /* --- Social Media Links --- */
+        .social-links { margin-top: 30px; display: flex; justify-content: center; gap: 25px; }
+        .social-links a { color: var(--primary); font-size: 24px; transition: 0.3s; opacity: 0.7; }
+        .social-links a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
+
+        @media (max-width: 1024px) {
+            .hero, .dashboard-preview, .trust-container, .stats-bar { flex-direction: column; text-align: center; grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 3rem; }
+            .feat-grid, .p-grid-v3 { grid-template-columns: 1fr; }
+            .testimonial blockquote { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-banner" style="display:flex; justify-content:center; align-items:center; gap:15px; flex-wrap:wrap;">
+        <span> Paiement disponible via</span>
+        <span style="font-weight:800;">BARIDIMOB (CCP)</span>
+        <span style="opacity:0.7;">&</span>
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" style="height:26px; vertical-align:middle;">
+    </div>
+
+    <header>
+        <img src="logo.png" alt="Nova AI Logo" class="logo-img">
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="https://wa.me/34641144002" class="btn-p" style="padding: 12px 25px; font-size: 14px;">Essai 7 Jours Gratuit</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1620779198308-412e8736e61f?auto=format&fit=crop&q=80&w=400" alt="IA Background" class="hero-bg-img hero-bg-1">
+        <img src="https://images.unsplash.com/photo-1620779198308-412e8736e61f?auto=format&fit=crop&q=80&w=400" alt="IA Background" class="hero-bg-img hero-bg-2">
+
+        <div class="hero-text">
+            <div style="color: var(--accent); font-weight: 800; letter-spacing: 2px; margin-bottom: 15px;">🇩🇪 INFRASTRUCTURE ALLEMANDE</div>
+            <h1>Libérez votre temps avec <span>Nova AI</span>.</h1>
+            <p>L'IA qui écoute los audios, gère votre Google Calendar et rappelle vos clients automatiquement. Ne perdez plus jamais un rendez-vous.</p>
+            <a href="https://wa.me/34641144002" class="btn-p">Activer mon IA via Baridimob</a>
+        </div>
+        
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000" class="main-mockup">
+        </div>
+    </section>
+
+    <section class="german-trust">
+        <div class="trust-container">
+            <div class="trust-content">
+                <h2>Technologie Allemande & Sécurité Totale 🇩🇪</h2>
+                <p>Vos données sont protégées par les standards les plus élevés au monde. Notre infrastructure est hébergée sur des serveurs ultra-sécurisés à <strong>Francfort, Allemagne</strong>. Confidentialité totale, cryptage de bout en bout et une stabilité européenne pour votre business en Algérie.</p>
+                <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
+                    <span><i class="fas fa-shield-alt" style="color: var(--accent);"></i> RGPD Compliant</span>
+                    <span><i class="fas fa-lock" style="color: var(--accent);"></i> Cryptage AES-256</span>
+                    <span><i class="fas fa-server" style="color: var(--accent);"></i> Serveurs à Francfort</span>
+                </div>
+            </div>
+            <div class="trust-flag">
+                <div class="flag-box"></div>
+                <div style="margin-top: 10px; font-weight: 800; font-size: 0.9rem;">EUROPEAN SERVERS</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h3>+100</h3>
+            <p>Clients Actifs en Algérie</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Disponibilité Totale</p>
+        </div>
+        <div class="stat-item">
+            <h3>90%</h3>
+            <p>Réduction des Absences</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Des fonctions qui font la différence</h2>
+        <p class="subtitle">Nova AI transforme la gestion de vos clients grâce à l'intelligence artificielle la plus avancée.</p>
+        <div class="feat-grid">
+            <div class="feat-card">
+                <img src="https://img.icons8.com/plasticine/100/google-calendar.png" alt="Google Calendar Icon">
+                <h3>Google Calendar Sync</h3>
+                <p>L'IA inscrit vos rendez-vous directement dans votre calendrier Google. Zéro oubli, zéro erreur.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/100/bell.png" alt="Reminder Icon">
+                <h3>Rappels Automatiques</h3>
+                <p>Vos clients reçoivent une notification 2h avant. Réduisez les absences de 90%.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/100/microphone.png" alt="Microphone Icon">
+                <h3>Compréhension Darja</h3>
+                <p>Une IA native qui comprend et répond aux messages vocaux en arabe algérien, comme un humain.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/100/control-panel.png" alt="Dashboard Icon">
+                <h3>Panel de Contrôle</h3>
+                <p>Un tableau de bord intuitif pour suivre vos clients, gérer vos rendez-vous et analyser vos performances.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/100/whatsapp.png" alt="WhatsApp Icon">
+                <h3>WhatsApp 24/7</h3>
+                <p>Vos clients peuvent prendre rendez-vous ou poser des questions à toute heure, même la nuit.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/100/rocket.png" alt="Growth Icon">
+                <h3>Croissance Boostée</h3>
+                <p>Concentrez-vous sur votre métier, l'IA s'occupe de l'acquisition et de la gestion client.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-preview">
+        <div class="dashboard-text">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Tout le contrôle dans <span>votre poche</span>.</h2>
+            <p style="font-size: 1.1rem; color: #486581; margin-bottom: 20px;">Visualisez vos nouveaux clients, suivez les rendez-vous pris par l'IA y analysez vos performances en temps réel.</p>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Liste de clients automatique</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Historique des conversations IA</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Statistiques de vente Baridimob</li>
+            </ul>
+        </div>
+        <div class="dashboard-img">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Panel de Control Nova AI">
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <img src="https://img.icons8.com/ios/200/ffffff/quote-left.png" alt="Quote Background" class="quote-bg">
+        <blockquote>"Depuis Nova AI, mon cabinet ne perd plus de rendez-vous. La gestion est fluide, les clients sont ravis et je gagne un temps fou. C'est une révolution pour mon business !"</blockquote>
+        <cite>— Dr. Amine, Dentiste à Alger</cite>
+    </section>
+
+    <section class="cta-final">
+        <h2>Prêt à booster votre business ?</h2>
+        <p style="font-size: 1.2rem; color: #486581; margin-bottom: 40px;">Commencez votre essai gratuit de 7 jours. Sans engagement.</p>
+        <a href="https://wa.me/34641144002" class="btn-p">Activer mon Essai Gratuit</a>
+    </section>
+
+    <section class="pricing-v3">
+        <h2 style="font-size: 3rem;">Choisissez votre plan idéal</h2>
+        <p style="opacity: 0.8; margin-top: 15px; display:flex; justify-content:center; gap:15px; align-items:center; flex-wrap:wrap;">
+            <span>Paiement sécurisé :</span>
+            <b>Baridimob (CCP)</b>
+            <span>&</span>
+            <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" style="height:28px;">
+        </p>
+
+        <div class="p-grid-v3">
+            <div class="p-card">
+                <h3>PLAN TEST</h3>
+                <div class="price-val">6.000 DA<span>/mois</span></div>
+                <ul style="list-style: none; text-align: left; opacity: 0.7; margin-bottom: 40px;">
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Accès Panel Complet</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Google Calendar Sync</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Compréhension Vocale Darja</li>
+                </ul>
+                <a href="https://wa.me/34641144002" class="btn-p" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); width: 100%;">Payer par Baridimob</a>
+            </div>
+
+            <div class="p-card gold">
+                <div style="background: var(--accent); color: var(--primary); padding: 5px 20px; border-radius: 50px; font-size: 12px; font-weight: 800; display: inline-block; margin-bottom: 20px;">OFFRE LA PLUS RENTABLE</div>
+                <h3>ANNUEL GOLD</h3>
+                <div class="price-val">45.000 DA<span>/an</span></div>
+                <ul style="list-style: none; text-align: left; margin-bottom: 40px;">
+                    <li style="margin-bottom: 12px;"><i class="fas fa-star" style="color: var(--accent);"></i> <strong>PANEL VIP & ILLIMITÉ</strong></li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-star" style="color: var(--accent);"></i> Rappels Clients Automatiques</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-star" style="color: var(--accent);"></i> Support Prioritaire 24/7</li>
+                </ul>
+                <a href="https://wa.me/34641144002" class="btn-p" style="width: 100%;">Payer par Baridimob</a>
+            </div>
+
+            <div class="p-card">
+                <h3>BUSINESS</h3>
+                <div class="price-val">25.000 DA<span>/6 mois</span></div>
+                <ul style="list-style: none; text-align: left; opacity: 0.7; margin-bottom: 40px;">
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Accès Panel Complet</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Rappels Clients Automatiques</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent);"></i> Économisez 11.000 DA</li>
+                </ul>
+                <a href="https://wa.me/34641144002" class="btn-p" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); width: 100%;">Payer par Baridimob</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 8%; text-align: center; background: #fff; border-top: 1px solid #eee;">
+        <img src="logo.png" alt="Nova AI" style="height: 40px; margin-bottom: 20px; opacity: 0.6;">
+        <p style="color: #64748b;">Nova AI - La technologie allemande au service des professionnels en Algérie.</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/nova_ai.dz/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61581321178507" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@persaqwe2?_r=1&_t=ZN-94DcccFp7G3" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+            <img src="https://img.icons8.com/color/48/000000/google-calendar--v1.png" alt="Google Calendar" style="height: 30px;">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="height: 30px;">
+            <span style="font-weight: bold; color: #e12d39; font-size: 20px;">BARIDIMOB</span>
+        </div>
+    </footer>
+
+</body>
+</html>
