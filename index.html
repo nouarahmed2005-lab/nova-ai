@@ -59,7 +59,6 @@
             transition: transform 0.3s ease;
         }
         .main-mockup:hover { transform: perspective(1000px) rotateY(0deg) scale(1.08); }
-
         /* --- German Tech Section --- */
         .german-trust {
             padding: 60px 8% 30px;
@@ -207,6 +206,25 @@
         .p-card { background: rgba(255,255,255,0.05); padding: 50px 30px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
         .p-card.gold { border: 2px solid var(--accent); background: rgba(36, 180, 176, 0.08); }
 
+        /* --- Horizontal Multi-User Card --- */
+        .p-card-wide {
+            margin-top: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border: 2px solid #a855f7;
+            border-radius: 35px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
+        }
+        .p-wide-content { flex: 1; }
+        .p-wide-price { text-align: center; min-width: 280px; padding-left: 40px; border-left: 1px solid rgba(255,255,255,0.1); }
+        .p-wide-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        
         .price-val { font-size: 3.5rem; font-weight: 800; margin: 20px 0; }
         .price-val span { font-size: 1rem; opacity: 0.5; }
 
@@ -214,6 +232,45 @@
         .social-links { margin-top: 30px; display: flex; justify-content: center; gap: 25px; }
         .social-links a { color: var(--primary); font-size: 24px; transition: 0.3s; opacity: 0.7; }
         .social-links a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
+
+        /* --- Interactive Demo Section --- */
+        .demo-section { padding: 100px 8%; background: #fff; text-align: center; border-top: 1px solid #f1f5f9; }
+        .demo-box {
+            background: #102a43; border-radius: 30px; padding: 60px 40px; margin-top: 50px;
+            display: flex; flex-direction: column; align-items: center; gap: 40px;
+            position: relative; overflow: hidden; color: white;
+            box-shadow: 0 30px 60px rgba(16, 42, 67, 0.2);
+        }
+        .demo-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(36,180,176,0.1) 0%, rgba(0,0,0,0) 60%); pointer-events: none; }
+        .demo-interface { display: flex; gap: 40px; width: 100%; max-width: 1000px; z-index: 2; flex-wrap: wrap; justify-content: center; align-items: center; }
+        
+        .chat-sim { flex: 1; min-width: 320px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 30px; text-align: left; display: flex; flex-direction: column; height: 350px; backdrop-filter: blur(10px); }
+        .chat-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .chat-avatar { width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .chat-body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; padding-right: 5px; }
+        .chat-body::-webkit-scrollbar { width: 5px; }
+        .chat-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        .msg { padding: 12px 18px; border-radius: 15px; font-size: 0.95rem; max-width: 85%; line-height: 1.5; }
+        .msg.ai { background: rgba(255,255,255,0.1); align-self: flex-start; border-bottom-left-radius: 2px; }
+        .msg.user { background: var(--accent); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        
+        .chat-input-area { display: flex; gap: 10px; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); }
+        .chat-input-area input { background: transparent; border: none; color: white; flex: 1; outline: none; padding: 10px 20px; font-family: inherit; font-size: 0.95rem; }
+        .chat-send { background: white; color: var(--primary); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .chat-send:hover { transform: scale(1.1); background: var(--accent); color: white; }
+
+        .system-state { flex: 0.8; min-width: 300px; display: flex; flex-direction: column; gap: 20px; position: relative; }
+        .system-state::before { content: 'BASE DE DONNÉES EN TEMPS RÉEL'; position: absolute; top: -30px; left: 0; font-size: 0.7rem; letter-spacing: 2px; font-weight: 800; opacity: 0.5; }
+        .state-card { background: white; color: var(--primary); padding: 25px; border-radius: 20px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+        .state-icon { width: 55px; height: 55px; background: #e0f2f1; color: var(--accent); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .state-info h4 { font-size: 0.85rem; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 5px; letter-spacing: 0.5px; }
+        .state-info div { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+        .updated-flash::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(36, 180, 176, 0.2); animation: flash 0.5s ease-out; }
+        @keyframes flash { from { opacity: 1; } to { opacity: 0; } }
+
+        .suggestion-chips { display: flex; gap: 10px; margin-top: 25px; justify-content: center; flex-wrap: wrap; z-index: 2; }
+        .chip { font-size: 0.9rem; background: rgba(255,255,255,0.1); color: white; padding: 10px 20px; border-radius: 50px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; }
+        .chip:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
 
         @media (max-width: 1024px) {
             .hero, .dashboard-preview, .trust-container, .stats-bar { flex-direction: column; text-align: center; grid-template-columns: 1fr; }
@@ -293,34 +350,42 @@
         <p class="subtitle">Nova AI transforme la gestion de vos clients grâce à l'intelligence artificielle la plus avancée.</p>
         <div class="feat-grid">
             <div class="feat-card">
-                <img src="https://img.icons8.com/plasticine/100/google-calendar.png" alt="Google Calendar Icon">
+                <img src="https://img.icons8.com/color/96/google-calendar--v1.png" alt="Google Calendar Icon">
                 <h3>Google Calendar Sync</h3>
                 <p>L'IA inscrit vos rendez-vous directement dans votre calendrier Google. Zéro oubli, zéro erreur.</p>
             </div>
             <div class="feat-card">
-                <img src="https://img.icons8.com/fluency/100/bell.png" alt="Reminder Icon">
-                <h3>Rappels Automatiques</h3>
-                <p>Vos clients reçoivent une notification 2h avant. Réduisez les absences de 90%.</p>
+                <img src="https://img.icons8.com/color/96/checked--v1.png" alt="Confirmation Icon">
+                <h3>Confirmation 2h Avant</h3>
+                <p>Message WhatsApp automatique pour confirmer la présence. Si le client annule, l'agenda se libère.</p>
             </div>
             <div class="feat-card">
-                <img src="https://img.icons8.com/fluency/100/microphone.png" alt="Microphone Icon">
+                <h3>Prompt Dynamique</h3>
+                <p>Écrivez "Prix 4000DA" ou "Pas de RDV mardi". L'IA s'adapte à vos règles sans aucune technique.</p>
+            </div>
+            <div class="feat-card">
+                <h3>Dossier Patient IA</h3>
+                <p>Notes post-consultation, recherche patient et résumé intelligent de l'historique médical par IA.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/color/96/sales-performance.png" alt="Stats Icon">
+                <h3>Finance & Stats</h3>
+                <p>Graphiques simples de vos revenus mensuels et historique des consultations générées.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/color/96/administrative-tools.png" alt="Admin Icon">
+                <h3>Admin Multi-User</h3>
+                <p>Idéal pour cliniques. Ajoutez plusieurs médecins et gérez tout depuis un compte administrateur unique.</p>
+            </div>
+            <div class="feat-card">
+                <img src="https://img.icons8.com/color/96/microphone.png" alt="Microphone Icon">
                 <h3>Compréhension Darja</h3>
                 <p>Une IA native qui comprend et répond aux messages vocaux en arabe algérien, comme un humain.</p>
             </div>
             <div class="feat-card">
-                <img src="https://img.icons8.com/fluency/100/control-panel.png" alt="Dashboard Icon">
-                <h3>Panel de Contrôle</h3>
-                <p>Un tableau de bord intuitif pour suivre vos clients, gérer vos rendez-vous et analyser vos performances.</p>
-            </div>
-            <div class="feat-card">
-                <img src="https://img.icons8.com/fluency/100/whatsapp.png" alt="WhatsApp Icon">
+                <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Icon">
                 <h3>WhatsApp 24/7</h3>
                 <p>Vos clients peuvent prendre rendez-vous ou poser des questions à toute heure, même la nuit.</p>
-            </div>
-            <div class="feat-card">
-                <img src="https://img.icons8.com/fluency/100/rocket.png" alt="Growth Icon">
-                <h3>Croissance Boostée</h3>
-                <p>Concentrez-vous sur votre métier, l'IA s'occupe de l'acquisition et de la gestion client.</p>
             </div>
         </div>
     </section>
@@ -330,13 +395,61 @@
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Tout le contrôle dans <span>votre poche</span>.</h2>
             <p style="font-size: 1.1rem; color: #486581; margin-bottom: 20px;">Visualisez vos nouveaux clients, suivez les rendez-vous pris par l'IA y analysez vos performances en temps réel.</p>
             <ul style="list-style: none;">
-                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Liste de clients automatique</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Historique des conversations IA</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Statistiques de vente Baridimob</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Ajout manuel</strong> de patients & Notes</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Modification prix/horaires <strong>autonome</strong></li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> Historique financier & Graphiques</li>
             </ul>
         </div>
         <div class="dashboard-img">
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Panel de Control Nova AI">
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary);">Essayez le <span style="color: var(--accent);">Prompt Dynamique</span></h2>
+        <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 0;">Parlez à votre système comme à un humain. Testez-le maintenant :</p>
+        
+        <div class="demo-box">
+            <div class="demo-interface">
+                <!-- Chat Simulator -->
+                <div class="chat-sim">
+                    <div class="chat-header">
+                        <div class="chat-avatar">AI</div>
+                        <div style="font-weight: 700; font-size: 0.9rem;">Assistant Nova</div>
+                    </div>
+                    <div class="chat-body" id="chatBody">
+                        <div class="msg ai">Bonjour Dr. ! Dites-moi ce que je dois changer dans votre configuration.</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="demoInput" placeholder="Ex: Change le prix à 4000..." onkeypress="if(event.key==='Enter') runDemo()">
+                        <button class="chat-send" onclick="runDemo()"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+                <!-- Live Database View -->
+                <div class="system-state">
+                    <div class="state-card" id="cardPrice">
+                        <div class="state-icon"><i class="fas fa-tag"></i></div>
+                        <div class="state-info">
+                            <h4>Prix Consultation</h4>
+                            <div id="displayPrice">2500 DA</div>
+                        </div>
+                    </div>
+                    <div class="state-card" id="cardStatus">
+                        <div class="state-icon" style="background: #f0f9ff; color: #3b82f6;"><i class="fas fa-clock"></i></div>
+                        <div class="state-info">
+                            <h4>Disponibilité Mardi</h4>
+                            <div id="displayStatus" style="color: #10b981;">Ouvert</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestion-chips">
+                <div class="chip" onclick="setDemo('Le prix de la consultation est 5000 DA')"><i class="fas fa-magic"></i> "Prix 5000 DA"</div>
+                <div class="chip" onclick="setDemo('Bloque les rendez-vous de mardi')"><i class="fas fa-ban"></i> "Bloque mardi"</div>
+                <div class="chip" onclick="setDemo('Ouvre le planning de mardi')"><i class="fas fa-check-circle"></i> "Ouvre mardi"</div>
+            </div>
         </div>
     </section>
 
@@ -396,6 +509,47 @@
                 <a href="https://wa.me/34641144002" class="btn-p" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); width: 100%;">Payer par Baridimob</a>
             </div>
         </div>
+
+        <!-- PLAN HORIZONTAL: MULTI-USER -->
+        <div class="p-card-wide">
+            <div class="rec-badge" style="top: -15px;">RECOMMANDÉ 🌟</div>
+            <div class="p-wide-content">
+                <div style="background: #a855f7; color: white; padding: 5px 20px; border-radius: 50px; font-size: 12px; font-weight: 800; display: inline-block; margin-bottom: 15px;">POUR CLINIQUES & CABINETS</div>
+                <h3 style="font-size: 2.5rem; margin-bottom: 10px;">MULTI-USER</h3>
+                <p style="opacity: 0.8; margin-bottom: 20px;">La solution complète pour gérer plusieurs praticiens sous un même toit avec une synchronisation parfaite.</p>
+                
+                <ul class="p-wide-list" style="list-style: none; text-align: left;">
+                    <li><i class="fas fa-users" style="color: #a855f7; margin-right: 10px;"></i> <strong>Gestion Multi-Praticiens</strong></li>
+                    <li><i class="fas fa-calendar-alt" style="color: #a855f7; margin-right: 10px;"></i> Agendas Séparés & Sync</li>
+                    <li><i class="fas fa-network-wired" style="color: #a855f7; margin-right: 10px;"></i> Secrétariat Centralisé</li>
+                    <li><i class="fas fa-chart-line" style="color: #a855f7; margin-right: 10px;"></i> Statistiques par Médecin</li>
+                </ul>
+            </div>
+            
+            <div class="p-wide-price">
+                <div class="price-val">85.000 DA<span>/an</span></div>
+                <a href="https://wa.me/34641144002" class="btn-p" style="background: #a855f7; width: 100%; border: none;">Payer par Baridimob</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--primary);">Questions Fréquentes</h2>
+        <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 40px;">Comprendre le fonctionnement du mode Multi-User.</p>
+        <div class="faq-grid">
+            <details class="faq-item">
+                <summary class="faq-question">Comment fonctionne le mode Multi-User ? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span></summary>
+                <p class="faq-answer">Ce plan permet de connecter plusieurs médecins ou praticiens sous un même compte. Chaque médecin dispose de son propre agenda synchronisé, mais le secrétariat peut tout gérer depuis un seul endroit.</p>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Chaque médecin a-t-il son propre Google Agenda ? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span></summary>
+                <p class="faq-answer">Oui ! Nova AI synchronise les rendez-vous de chaque médecin dans son propre Google Calendar personnel (ex: Dr. Amine sur son agenda, Dr. Sarah sur le sien), tout en gardant une vue d'ensemble pour la clinique.</p>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Puis-je ajouter des médecins plus tard ? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span></summary>
+                <p class="faq-answer">Absolument. Le système est flexible. Vous pouvez commencer avec 2 médecins et contacter notre support pour en ajouter d'autres au fur et à mesure que votre clinique s'agrandit.</p>
+            </details>
+        </div>
     </section>
 
     <footer style="padding: 60px 8%; text-align: center; background: #fff; border-top: 1px solid #eee;">
@@ -414,6 +568,51 @@
             <span style="font-weight: bold; color: #e12d39; font-size: 20px;">BARIDIMOB</span>
         </div>
     </footer>
+
+    <script>
+        function setDemo(text) {
+            document.getElementById('demoInput').value = text;
+            runDemo();
+        }
+
+        function runDemo() {
+            const input = document.getElementById('demoInput');
+            const val = input.value.trim();
+            if(!val) return;
+
+            const chatBody = document.getElementById('chatBody');
+            chatBody.innerHTML += `<div class="msg user">${val}</div>`;
+            input.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            setTimeout(() => {
+                let responseText = "Je n'ai pas compris la commande exacte pour cette démo.";
+                let action = false;
+
+                const priceMatch = val.match(/\d+/);
+                if ((val.toLowerCase().includes('prix') || val.toLowerCase().includes('consultation')) && priceMatch) {
+                    const newPrice = priceMatch[0];
+                    document.getElementById('displayPrice').innerText = newPrice + " DA";
+                    triggerUpdate('cardPrice');
+                    responseText = `Parfait, j'ai mis à jour le prix de la consultation à ${newPrice} DA.`;
+                    action = true;
+                } else if (val.toLowerCase().includes('bloque') || val.toLowerCase().includes('ferme')) {
+                    const el = document.getElementById('displayStatus'); el.innerText = "Fermé"; el.style.color = "#e12d39";
+                    triggerUpdate('cardStatus');
+                    responseText = "Compris, j'ai bloqué les rendez-vous pour mardi.";
+                    action = true;
+                } else if (val.toLowerCase().includes('ouvre') || val.toLowerCase().includes('dispo')) {
+                    const el = document.getElementById('displayStatus'); el.innerText = "Ouvert"; el.style.color = "#10b981";
+                    triggerUpdate('cardStatus');
+                    responseText = "C'est fait, mardi est à nouveau ouvert.";
+                    action = true;
+                }
+                chatBody.innerHTML += `<div class="msg ai">${responseText}</div>`;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 600);
+        }
+        function triggerUpdate(id) { const card = document.getElementById(id); card.classList.remove('updated-flash'); void card.offsetWidth; card.classList.add('updated-flash'); }
+    </script>
 
 </body>
 </html>
