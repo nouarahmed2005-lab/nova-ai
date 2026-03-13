@@ -278,6 +278,23 @@
             .feat-grid, .p-grid-v3 { grid-template-columns: 1fr; }
             .testimonial blockquote { font-size: 1.5rem; }
         }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2.8rem; }
+            .p-card-wide {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+            }
+            .p-wide-price {
+                width: 100%; border-left: none; border-top: 1px solid rgba(255,255,255,0.1);
+                padding-left: 0; padding-top: 30px; margin-top: 30px;
+            }
+            .p-wide-list { grid-template-columns: 1fr; text-align: left; }
+            .demo-box { padding: 40px 20px; }
+            .faq-question { font-size: 1rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -360,10 +377,12 @@
                 <p>Message WhatsApp automatique pour confirmer la présence. Si le client annule, l'agenda se libère.</p>
             </div>
             <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/96/voice-command.png" alt="Prompt Icon">
                 <h3>Prompt Dynamique</h3>
                 <p>Écrivez "Prix 4000DA" ou "Pas de RDV mardi". L'IA s'adapte à vos règles sans aucune technique.</p>
             </div>
             <div class="feat-card">
+                <img src="https://img.icons8.com/fluency/96/health-book.png" alt="Health Icon">
                 <h3>Dossier Patient IA</h3>
                 <p>Notes post-consultation, recherche patient et résumé intelligent de l'historique médical par IA.</p>
             </div>
